@@ -1,13 +1,26 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "asvira/fti-chatbot",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "Asvira - Asisten Virtual FTI UAP - AI Chatbot untuk informasi Fakultas Teknologi Informasi",
+    "keywords": [
+        "laravel",
+        "chatbot",
+        "ai",
+        "fti",
+        "uap",
+        "asvira",
+        "filament"
+    ],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Asvira Team",
+            "email": "info@fti.uap.ac.id"
+        }
+    ],
     "require": {
         "php": "^8.2",
-        "filament/filament": "^3.3",
         "guzzlehttp/guzzle": "^7.9",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1"
@@ -58,6 +71,14 @@
         "test": [
             "@php artisan config:clear --ansi",
             "@php artisan test"
+        ],
+        "format": [
+            "@php artisan pint"
+        ],
+        "analyze": [
+            "@php artisan route:list",
+            "@php artisan config:cache",
+            "@php artisan route:cache"
         ]
     },
     "extra": {
@@ -75,5 +96,11 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.filamentphp.com"
+        }
+    ]
 }

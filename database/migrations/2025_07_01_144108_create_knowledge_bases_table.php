@@ -12,9 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('knowledge_bases', function (Blueprint $table) {
-             $table->id();
-             $table->text('content'); // Bisa dari file atau tulisan langsung
-             $table->timestamps();
+            $table->id();
+            $table->text('question'); // Pertanyaan
+            $table->text('answer'); // Jawaban
+            $table->string('category')->nullable(); // Kategori (opsional)
+            $table->text('content')->nullable(); // Konten tambahan (opsional)
+            $table->timestamps();
         });
     }
 

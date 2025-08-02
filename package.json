@@ -2,16 +2,51 @@
     "$schema": "https://json.schemastore.org/package.json",
     "private": true,
     "type": "module",
+    "name": "asvira-fti",
+    "version": "1.0.0",
+    "description": "Asvira - Asisten Virtual FTI UAP - AI Chatbot untuk informasi Fakultas Teknologi Informasi",
+    "keywords": [
+        "laravel",
+        "chatbot",
+        "ai",
+        "fti",
+        "uap",
+        "asvira"
+    ],
+    "author": "Asvira Team",
+    "license": "MIT",
     "scripts": {
+        "dev": "vite",
         "build": "vite build",
-        "dev": "vite"
+        "preview": "vite preview",
+        "lint": "eslint resources/js/**/*.js",
+        "lint:fix": "eslint resources/js/**/*.js --fix",
+        "format": "prettier --write resources/**/*.{js,css,blade.php}",
+        "type-check": "tsc --noEmit"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
         "axios": "^1.8.2",
         "concurrently": "^9.0.1",
+        "eslint": "^8.57.0",
         "laravel-vite-plugin": "^1.2.0",
+        "prettier": "^3.2.5",
         "tailwindcss": "^4.0.0",
         "vite": "^6.2.4"
-    }
+    },
+    "dependencies": {
+        "tsparticles": "^2.9.3"
+    },
+    "engines": {
+        "node": ">=16.0.0",
+        "npm": ">=8.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/your-username/asvira-fti.git"
+    },
+    "bugs": {
+        "url": "https://github.com/your-username/asvira-fti/issues"
+    },
+    "homepage": "https://github.com/your-username/asvira-fti#readme"
 }
