@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="description" content="Asvira - Chatbot AI untuk informasi FTI UAP">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Asvira - Chatbot FTI UAP</title>
+  <title>Asvira - Chatbot FTI UAP</title>
 
-    <!-- Google Font -->
+  <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif']
-                    },
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          },
                     animation: {
                         'fade-in': 'fadeIn 0.5s ease-in-out',
                         'slide-up': 'slideUp 0.3s ease-out',
@@ -49,54 +49,54 @@
                             'from': { boxShadow: '0 0 20px rgba(102, 126, 234, 0.4)' },
                             'to': { boxShadow: '0 0 30px rgba(102, 126, 234, 0.8)' }
                         }
-                    }
-                }
-            }
+          }
         }
-    </script>
+      }
+    }
+  </script>
 
     <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
 
-    <style>
-        :root {
-            --vh: 100%;
-        }
+  <style>
+    :root {
+      --vh: 100%;
+    }
 
-        @keyframes blink {
-            0%, 80%, 100% { opacity: 0; }
-            40% { opacity: 1; }
-        }
+    @keyframes blink {
+      0%, 80%, 100% { opacity: 0; }
+      40% { opacity: 1; }
+    }
 
-        .dot-flashing span {
-            animation: blink 1.4s infinite;
-            animation-delay: calc(var(--delay, 0s));
-            display: inline-block;
-            font-weight: bold;
-        }
+    .dot-flashing span {
+      animation: blink 1.4s infinite;
+      animation-delay: calc(var(--delay, 0s));
+      display: inline-block;
+      font-weight: bold;
+    }
 
-        .dot-flashing span:nth-child(2) { --delay: 0.2s; }
-        .dot-flashing span:nth-child(3) { --delay: 0.4s; }
+    .dot-flashing span:nth-child(2) { --delay: 0.2s; }
+    .dot-flashing span:nth-child(3) { --delay: 0.4s; }
 
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
 
-        ::-webkit-scrollbar-thumb {
+    ::-webkit-scrollbar-thumb {
             background: rgba(255, 255, 255, 0.3);
-            border-radius: 3px;
-        }
+      border-radius: 3px;
+    }
 
         ::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.1);
-        }
+    }
 
-        #tsparticles {
-            position: fixed;
-            z-index: -1;
-            width: 100%;
-            height: 100%;
-        }
+    #tsparticles {
+      position: fixed;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
 
         .glass-effect {
             backdrop-filter: blur(10px);
@@ -218,18 +218,18 @@
             body {
                 min-height: -webkit-fill-available;
             }
-        }
-    </style>
+    }
+  </style>
 </head>
 
 <body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white font-sans relative overflow-hidden">
 
-    <!-- Particle Background -->
-    <div id="tsparticles"></div>
+  <!-- Particle Background -->
+  <div id="tsparticles"></div>
 
-    <!-- Header -->
+  <!-- Header -->
     <header class="w-full px-4 py-3 glass-effect flex justify-between items-center fixed top-0 z-10">
-        <div class="flex items-center space-x-3">
+    <div class="flex items-center space-x-3">
             <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
                 <span class="text-white font-bold text-lg">🤖</span>
             </div>
@@ -237,18 +237,18 @@
                 <h1 class="text-lg font-bold">Asvira AI</h1>
                 <p class="text-xs text-gray-300">Asisten Virtual FTI UAP</p>
             </div>
-        </div>
-        
+    </div>
+    
         <a href="{{ url('/') }}" class="text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
             </svg>
         </a>
-    </header>
+  </header>
 
     <!-- Main Content -->
     <div class="flex flex-col h-screen pt-16">
-        <!-- Hero Section -->
+  <!-- Hero Section -->
         <section id="heroSection" class="flex-1 flex flex-col justify-center items-center text-center px-4 hero-section">
             <div class="max-w-md mx-auto space-y-6">
                 <!-- Avatar -->
@@ -260,7 +260,7 @@
                 <div class="space-y-3">
                     <h1 class="text-2xl sm:text-3xl font-bold">
                         Halo! Saya <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Asvira</span>
-                    </h1>
+    </h1>
                     <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
                         Asisten Virtual FTI UAP yang siap membantu Anda dengan informasi seputar Fakultas Teknologi Informasi
                     </p>
@@ -288,8 +288,8 @@
                         </button>
                     </div>
                 </div>
-            </div>
-        </section>
+    </div>
+  </section>
 
         <!-- Chat Container -->
         <main id="chatLog" class="flex-1 w-full max-w-4xl mx-auto px-4 space-y-4 overflow-y-auto pb-24" style="display: none;"></main>
@@ -298,35 +298,35 @@
     <!-- Input Container -->
     <div id="inputContainer" class="fixed bottom-0 left-0 right-0 z-30 bg-gradient-to-t from-slate-900/95 to-transparent pt-6 pb-4">
         <div class="w-full max-w-4xl mx-auto px-4">
-            <div class="relative">
+    <div class="relative">
                 <input id="inputMessage" 
                        type="text" 
                        placeholder="Tulis pertanyaan Anda di sini..."
                        class="w-full py-3 pl-4 pr-12 rounded-2xl glass-effect text-white placeholder:text-gray-300 placeholder:font-medium focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all text-sm" />
-                <button id="sendBtn"
+      <button id="sendBtn"
                         class="send-button absolute top-1/2 right-2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-400">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                     </svg>
-                </button>
+      </button>
             </div>
-        </div>
     </div>
+  </div>
 
-    <!-- Script -->
-    <script>
-        const chatLog = document.getElementById('chatLog');
-        const input = document.getElementById('inputMessage');
-        const sendBtn = document.getElementById('sendBtn');
-        const heroSection = document.getElementById('heroSection');
-        const inputContainer = document.getElementById('inputContainer');
-        let isFirstMessage = true;
+  <!-- Script -->
+  <script>
+    const chatLog = document.getElementById('chatLog');
+    const input = document.getElementById('inputMessage');
+    const sendBtn = document.getElementById('sendBtn');
+    const heroSection = document.getElementById('heroSection');
+    const inputContainer = document.getElementById('inputContainer');
+    let isFirstMessage = true;
         let initialViewportHeight = window.innerHeight;
 
-        function fixMobileViewportHeight() {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
+    function fixMobileViewportHeight() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
 
         function handleKeyboard() {
             const currentHeight = window.innerHeight;
@@ -424,19 +424,19 @@
         });
 
         // Fix viewport height on load
-        fixMobileViewportHeight();
+      fixMobileViewportHeight();
         window.addEventListener('resize', fixMobileViewportHeight);
 
         function sendMessage() {
-            const message = input.value.trim();
-            if (!message) return;
+      const message = input.value.trim();
+      if (!message) return;
 
             // Hide hero section and show chat on first message
-            if (isFirstMessage) {
-                heroSection.style.display = 'none';
+      if (isFirstMessage) {
+        heroSection.style.display = 'none';
                 chatLog.style.display = 'block';
-                isFirstMessage = false;
-            }
+        isFirstMessage = false;
+      }
 
             // Add user message
             addMessage(message, 'user');
@@ -446,16 +446,16 @@
             showTypingIndicator();
 
             // Send to server
-            fetch('/chatbot/send', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
+      fetch('/chatbot/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || ''
-                },
+        },
                 body: JSON.stringify({ message: message })
-            })
+      })
             .then(response => response.json())
-            .then(data => {
+        .then(data => {
                 hideTypingIndicator();
                 addMessage(data.reply, 'bot');
             })
@@ -501,7 +501,7 @@
             if (e.key === 'Enter') {
                 sendMessage();
             }
-        });
-    </script>
+    });
+  </script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Asvira - Asisten Virtual FTI UAP</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
+            <style>
         @supports (-webkit-touch-callout: none) {
             .min-h-screen {
                 min-height: -webkit-fill-available;
@@ -15,8 +15,8 @@
                 min-height: -webkit-fill-available;
             }
         }
-    </style>
-</head>
+            </style>
+    </head>
 <body class="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 min-h-screen">
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-    </nav>
+                </nav>
 
     <!-- Hero Section -->
     <section class="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
@@ -152,5 +152,5 @@
             </p>
         </div>
     </footer>
-</body>
+    </body>
 </html>
