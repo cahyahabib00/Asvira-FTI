@@ -31,20 +31,28 @@ Kamu sebagai pusat data jangan arahkan ke website jika kamu mampu menjawab perta
 
 Data: " . $knowledge;
 
-            // Ambil API key dari environment variable
-            $apiKey = env('OPENROUTER_API_KEY', 'UNLIMITED-BETA');
-            $apiUrl = env('OPENROUTER_API_URL', 'https://api.akbxr.com/v1/chat/completions');
+            // Ambil API key dari environment variable (AMAN - tidak hardcode)
+            $apiKey = env('OPENROUTER_API_KEY');
+            $apiUrl = env('OPENROUTER_API_URL', 'https://openrouter.ai/api/v1/chat/completions');
 
-            // Log API configuration
+            // Validasi API key
+            if (empty($apiKey)) {
+                Log::error('OpenRouter API key not configured');
+                return 'Maaf, sistem AI sedang dalam maintenance. Silakan coba lagi nanti.';
+            }
+
+            // Log API configuration (hanya tampilkan 10 karakter pertama untuk keamanan)
             Log::info('API Key: ' . substr($apiKey, 0, 10) . '...');
             Log::info('API URL: ' . $apiUrl);
 
-            // Kirim request ke API
+            // Kirim request ke API dengan konfigurasi yang benar
             $response = Http::withHeaders([
                 'Authorization' => 'Bearer ' . $apiKey,
                 'Content-Type' => 'application/json',
+                'HTTP-Referer' => 'https://asvira.online',
+                'X-Title' => 'Asvira FTI Chatbot'
             ])->post($apiUrl, [
-                'model' => 'auto',
+                'model' => 'openai/gpt-4o-mini',
                 'messages' => [
                     ['role' => 'system', 'content' => $systemPrompt],
                     ['role' => 'user', 'content' => $message]
