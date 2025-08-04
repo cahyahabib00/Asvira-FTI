@@ -446,11 +446,10 @@
             showTypingIndicator();
 
             // Send to server
-      fetch('/chatbot/send', {
+      fetch('/api/chatbot/send', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || ''
+          'Content-Type': 'application/json'
         },
                 body: JSON.stringify({ message: message })
       })
