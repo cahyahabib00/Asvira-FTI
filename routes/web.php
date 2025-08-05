@@ -14,6 +14,9 @@ Route::get('/', function () {
 Route::get('/chatbot', [ChatbotController::class, 'index'])->name('chatbot');
 Route::post('/chatbot/send', [ChatbotController::class, 'send'])->name('chatbot.send');
 
+// API route for chatbot (no middleware)
+Route::post('/api/chatbot/send', [ChatbotController::class, 'send'])->name('api.chatbot.send')->withoutMiddleware([\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class]);
+
 // Auth routes
 Route::get('/login', [AuthController::class, 'showLogin'])->name('auth.login');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
