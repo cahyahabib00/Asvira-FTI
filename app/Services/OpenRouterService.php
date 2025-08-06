@@ -8,6 +8,13 @@ use App\Models\KnowledgeBase;
 
 class OpenRouterService
 {
+    private $webScrapingService;
+
+    public function __construct(WebScrapingService $webScrapingService)
+    {
+        $this->webScrapingService = $webScrapingService;
+    }
+
     public function sendMessage($message)
     {
         try {
@@ -19,17 +26,23 @@ class OpenRouterService
                 })
                 ->implode("\n\n");
 
+            // Ambil data dari website Universitas Aisyah
+            $universityData = $this->webScrapingService->getRelevantContent($message);
+            
             // Log untuk debugging
             Log::info('Knowledge Base Count: ' . KnowledgeBase::count());
             Log::info('User Question: ' . $message);
+            Log::info('University Data Length: ' . strlen($universityData));
 
-            // Prompt awal
-            $systemPrompt = "Gunakan pengetahuan berikut untuk membantu menjawab pertanyaan seputar FTI UAP. 
-Jika tidak ada di dalam database, jawab dengan sopan bahwa Anda tidak tahu. 
+            // Prompt awal dengan data dari website
+            $systemPrompt = "Gunakan pengetahuan berikut untuk membantu menjawab pertanyaan seputar FTI UAP dan Universitas Aisyah Pringsewu. 
+Jika tidak ada di dalam database, gunakan informasi dari website resmi universitas.
 Posisikan diri sebagai karyawan profesional bernama Asvira (Aisyah Virtual Asisten). 
-Kamu sebagai pusat data jangan arahkan ke website jika kamu mampu menjawab pertanyaan tersebut. 
+Kamu sebagai pusat data jangan arahkan ke website jika kamu mampu menjawab pertanyaan tersebut.
 
-Data: " . $knowledge;
+Data Knowledge Base: " . $knowledge . "
+
+Data Website Universitas Aisyah: " . $universityData;
 
             // Ambil API key dari environment variable
             $apiKey = env('OPENROUTER_API_KEY');

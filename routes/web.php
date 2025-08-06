@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\KnowledgeBaseController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\WebsiteDataController;
 
 // Welcome page route
 Route::get('/', function () {
@@ -25,6 +26,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 // Protected Admin routes
 Route::middleware(['admin'])->group(function () {
     Route::resource('knowledge-base', KnowledgeBaseController::class);
+    Route::get('/website-data', [WebsiteDataController::class, 'index'])->name('website-data.index');
+    Route::get('/website-data/update', [WebsiteDataController::class, 'update'])->name('website-data.update');
+    Route::get('/website-data/test', [WebsiteDataController::class, 'test'])->name('website-data.test');
 });
 
 // Admin dashboard route (redirects to login if not authenticated)
